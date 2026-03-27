@@ -1,9 +1,64 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>MindRight App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindRight - Mental Wellness App</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        .container { width: 90%; max-width: 800px; margin: auto; }
+        header { background: #4CAF50; color: white; padding: 10px 0; text-align: center; }
+        nav { margin: 10px 0; }
+        nav a { margin: 0 10px; text-decoration: none; color: #4CAF50; }
+        .screen { display: none; }
+        .active { display: block; }
+        footer { margin-top: 20px; text-align: center; }
+    </style>
 </head>
 <body>
-    <h1>Welcome to MindRight</h1>
-    <p>Your go-to app for mental wellness.</p>
+    <header>
+        <h1>MindRight</h1>
+        <nav>
+            <a href="#home" onclick="showScreen('home')">Home</a>
+            <a href="#session" onclick="showScreen('session')">Session</a>
+            <a href="#share" onclick="showScreen('share')">Share</a>
+            <a href="#facilitator" onclick="showScreen('facilitator')">Facilitator</a>
+            <a href="#done" onclick="showScreen('done')">Done</a>
+        </nav>
+    </header>
+    <div class="container">
+        <div id="home" class="screen active">
+            <h2>Welcome to MindRight</h2>
+            <p>Your journey to mental wellness begins here.</p>
+        </div>
+        <div id="session" class="screen">
+            <h2>Session</h2>
+            <p>Engage in a guided session.</p>
+        </div>
+        <div id="share" class="screen">
+            <h2>Share Your Experience</h2>
+            <p>Share your mental wellness journey with others.</p>
+        </div>
+        <div id="facilitator" class="screen">
+            <h2>Facilitator</h2>
+            <p>Connect with a mental wellness facilitator.</p>
+        </div>
+        <div id="done" class="screen">
+            <h2>Thank You!</h2>
+            <p>You've completed your session. Remember, mental wellness is a journey.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2026 MindRight. All rights reserved.</p>
+    </footer>
+    <script>
+        function showScreen(screenId) {
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => {
+                screen.classList.remove('active');
+            });
+            document.getElementById(screenId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
